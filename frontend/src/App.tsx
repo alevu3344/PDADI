@@ -1,4 +1,4 @@
-import React from 'react';
+
 import TransactionForm from './components/form/TransactionForm';
 import './App.css'; // Puoi mettere stili globali qui o rimuoverlo
 

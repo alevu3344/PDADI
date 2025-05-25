@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "backend"
+version = "0.1.0"
+description = ""
+authors = ["alevu3344 <alessandro.valmori2@studio.unibo.it>"]
+readme = "README.md"
+package-mode = false
+
+
+
+
+[tool.poetry.dependencies]
+python = ">=3.13" # Assicurati che la sintassi sia corretta per Poetry
+Flask = "^3.0.0" # o la versione che hai
+Flask-CORS = "^4.0.0"
+joblib = "^1.5.1"
+numpy = "^2.2.6"
+scikit-learn = "^1.6.1"
+pandas = "^2.2.3"
+xgboost = "^3.0.2"
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

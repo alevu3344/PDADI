@@ -1,21 +1,39 @@
 /* In App.css o index.css */
+
+
+
 body {
   font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0;
   padding: 0;
   background-color: #f0f2f5;
   color: #333;
+  width: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh; /* Assicura che il footer sia sempre in fondo alla pagina */
+  width: 100%;
 }
 
 .App {
   text-align: center;
+  width: 100%;
 }
 
 .App-header {
   background-color: #282c34;
   padding: 20px;
+  box-sizing: border-box;
   color: white;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .App-header h1 {
@@ -31,6 +49,7 @@ footer {
     padding: 20px;
     background-color: #f8f9fa;
     border-top: 1px solid #e7e7e7;
+    box-sizing: border-box;
     font-size: 0.9em;
     color: #6c757d;
 }
