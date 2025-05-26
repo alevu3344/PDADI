@@ -7558,11 +7558,12 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [61]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">xgboost</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xgb</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span><span class="p">,</span> <span class="n">GridSearchCV</span><span class="p">,</span> <span class="n">StratifiedKFold</span>
@@ -7602,7 +7603,7 @@ Le feature <code>V1</code> a <code>V28</code> sono il risultato di una trasforma
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [62]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Caricamento del dataset</span>
@@ -7651,7 +7652,7 @@ Dimensioni del dataset: (284807, 31)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [63]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Visualizza le prime righe</span>
@@ -7789,7 +7790,7 @@ dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [64]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Distribuzione della variabile target 'Class'</span>
@@ -7848,7 +7849,7 @@ Percentuale frodi: 0.17%
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [65]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
@@ -7932,7 +7933,7 @@ Percentuale frodi: 0.17%
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [66]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Correlazione con la variabile target 'Class'</span>
@@ -8034,7 +8035,7 @@ Il grafico a barre mostra le correlazioni di Pearson tra ciascuna feature e la v
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [67]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Esempio: plot di alcune features V1-V28 per le due classi</span>
@@ -8087,7 +8088,7 @@ Il grafico a barre mostra le correlazioni di Pearson tra ciascuna feature e la v
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [68]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Scaling delle colonne 'Amount' e 'Time'</span>
@@ -8153,7 +8154,7 @@ Dataset dopo lo scaling e riordino (prime righe):
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [69]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">df_prepared</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">'Class'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -8199,7 +8200,7 @@ Name: proportion, dtype: float64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [70]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Applica SMOTE solo sul training set per evitare data leakage</span>
@@ -8251,7 +8252,7 @@ Name: count, dtype: int64
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [71]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 1. Addestrare un modello XGBoost su X_train_smote per ottenere le feature importances</span>
@@ -8325,7 +8326,7 @@ Name: count, dtype: int64
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/home/siralex/.cache/pypoetry/virtualenvs/credit-card-j7SKsNum-py3.13/lib/python3.13/site-packages/xgboost/training.py:183: UserWarning: [18:42:08] WARNING: /workspace/src/learner.cc:738: 
+<pre>/home/siralex/.cache/pypoetry/virtualenvs/credit-card-j7SKsNum-py3.13/lib/python3.13/site-packages/xgboost/training.py:183: UserWarning: [13:38:30] WARNING: /workspace/src/learner.cc:738: 
 Parameters: { "use_label_encoder" } are not used.
 
   bst.update(dtrain, iteration=i, fobj=obj)
@@ -8423,7 +8424,7 @@ Nuova forma di X_test_fs: (56962, 15)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [72]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">evaluate_model</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">y_pred_proba</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">model_name</span><span class="o">=</span><span class="s2">"Modello"</span><span class="p">):</span>
@@ -8480,22 +8481,23 @@ Nuova forma di X_test_fs: (56962, 15)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [73]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Usare i dati del training set con SMOTE</span>
-<span class="n">lr_model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="s1">'liblinear'</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span> <span class="c1"># class_weight='balanced' potrebbe essere un'alternativa a SMOTE</span>
-<span class="n">lr_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_smote</span><span class="p">,</span> <span class="n">y_train_smote</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Logistic Regression con Feature Selection</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"--- Addestramento Logistic Regression (con Feature Selection) ---"</span><span class="p">)</span>
+<span class="n">lr_model_fs</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="s1">'liblinear'</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span> 
+<span class="n">lr_model_fs</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_smote_fs</span><span class="p">,</span> <span class="n">y_train_smote</span><span class="p">)</span> <span class="c1"># Usa X_train_smote_fs</span>
 
-<span class="n">y_pred_lr</span> <span class="o">=</span> <span class="n">lr_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="n">y_pred_proba_lr</span> <span class="o">=</span> <span class="n">lr_model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">y_pred_lr_fs</span> <span class="o">=</span> <span class="n">lr_model_fs</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_fs</span><span class="p">)</span> <span class="c1"># Usa X_test_fs</span>
+<span class="n">y_pred_proba_lr_fs</span> <span class="o">=</span> <span class="n">lr_model_fs</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test_fs</span><span class="p">)</span> <span class="c1"># Usa X_test_fs</span>
 
-<span class="n">results_lr</span> <span class="o">=</span> <span class="n">evaluate_model</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_lr</span><span class="p">,</span> <span class="n">y_pred_proba_lr</span><span class="p">,</span> <span class="s2">"Logistic Regression (con SMOTE)"</span><span class="p">)</span>
-<span class="n">model_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">results_lr</span><span class="p">)</span>
+<span class="c1"># Aggiorna il nome del modello per chiarezza nella tabella dei risultati</span>
+<span class="n">results_lr_fs</span> <span class="o">=</span> <span class="n">evaluate_model</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_lr_fs</span><span class="p">,</span> <span class="n">y_pred_proba_lr_fs</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"Logistic Regression (Top </span><span class="si">{</span><span class="n">N_FEATURES_TO_SELECT</span><span class="si">}</span><span class="s2"> Feat.)"</span><span class="p">)</span>
 
-<span class="c1"># Analisi Coefficienti (se interessante, ma con PCA sono meno interpretabili)</span>
-<span class="c1"># coeff = pd.DataFrame({'feature': X_train.columns, 'coefficient': lr_model.coef_[0]})</span>
-<span class="c1"># print(coeff.sort_values(by='coefficient', ascending=False))</span>
+<span class="c1"># Rimuovi il vecchio risultato della LR dalla lista se presente, poi aggiungi il nuovo</span>
+<span class="n">model_results</span> <span class="o">=</span> <span class="p">[</span><span class="n">res</span> <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">model_results</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">res</span><span class="p">[</span><span class="s1">'model'</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"Logistic Regression"</span><span class="p">)]</span>
+<span class="n">model_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">results_lr_fs</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8576,27 +8578,30 @@ L'<strong>AUC-PR di 0.7249</strong> è un buon punto di partenza, ma l'F1-score 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [74]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">rf_model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="s1">'balanced_subsample'</span><span class="p">)</span> <span class="c1"># class_weight per aiutare ulteriormente</span>
-<span class="c1"># Oppure allenare su dati con SMOTE senza class_weight:</span>
-<span class="c1"># rf_model = RandomForestClassifier(n_estimators=100, random_state=42)</span>
-<span class="n">rf_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_smote</span><span class="p">,</span> <span class="n">y_train_smote</span><span class="p">)</span> <span class="c1"># O X_train, y_train se si usa class_weight</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Random Forest non ottimizzato con Feature Selection</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"--- Addestramento Random Forest (non ottimizzato, con Feature Selection) ---"</span><span class="p">)</span>
+<span class="n">rf_model_fs</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="s1">'balanced_subsample'</span><span class="p">)</span>
+<span class="n">rf_model_fs</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_smote_fs</span><span class="p">,</span> <span class="n">y_train_smote</span><span class="p">)</span> <span class="c1"># Usa X_train_smote_fs</span>
 
-<span class="n">y_pred_rf</span> <span class="o">=</span> <span class="n">rf_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="n">y_pred_proba_rf</span> <span class="o">=</span> <span class="n">rf_model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">y_pred_rf_fs</span> <span class="o">=</span> <span class="n">rf_model_fs</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_fs</span><span class="p">)</span> <span class="c1"># Usa X_test_fs</span>
+<span class="n">y_pred_proba_rf_fs</span> <span class="o">=</span> <span class="n">rf_model_fs</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test_fs</span><span class="p">)</span> <span class="c1"># Usa X_test_fs</span>
 
-<span class="n">results_rf</span> <span class="o">=</span> <span class="n">evaluate_model</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_rf</span><span class="p">,</span> <span class="n">y_pred_proba_rf</span><span class="p">,</span> <span class="s2">"Random Forest (con SMOTE)"</span><span class="p">)</span>
-<span class="n">model_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">results_rf</span><span class="p">)</span>
+<span class="n">results_rf_fs</span> <span class="o">=</span> <span class="n">evaluate_model</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_rf_fs</span><span class="p">,</span> <span class="n">y_pred_proba_rf_fs</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"Random Forest (Top </span><span class="si">{</span><span class="n">N_FEATURES_TO_SELECT</span><span class="si">}</span><span class="s2"> Feat.)"</span><span class="p">)</span>
 
-<span class="c1"># Analisi Feature Importances</span>
-<span class="n">importances_rf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'feature'</span><span class="p">:</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="s1">'importance'</span><span class="p">:</span> <span class="n">rf_model</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">})</span>
-<span class="n">importances_rf</span> <span class="o">=</span> <span class="n">importances_rf</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'importance'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'feature'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Feature Importances (Random Forest):"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">importances_rf</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
-<span class="n">importances_rf</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'bar'</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Top 10 Feature Importances - Random Forest'</span><span class="p">)</span>
+<span class="n">model_results</span> <span class="o">=</span> <span class="p">[</span><span class="n">res</span> <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">model_results</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">res</span><span class="p">[</span><span class="s1">'model'</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"Random Forest (con SMOTE)"</span><span class="p">)]</span> <span class="c1"># Rimuove il vecchio nome se esiste</span>
+<span class="n">model_results</span> <span class="o">=</span> <span class="p">[</span><span class="n">res</span> <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">model_results</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">res</span><span class="p">[</span><span class="s1">'model'</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"Random Forest (Top"</span><span class="p">)]</span> <span class="c1"># Rimuove altre versioni FS se riesegui</span>
+<span class="n">model_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">results_rf_fs</span><span class="p">)</span>
+
+<span class="c1"># Analisi Feature Importances (ora basata sulle feature selezionate)</span>
+<span class="n">importances_rf_fs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'feature'</span><span class="p">:</span> <span class="n">X_train_smote_fs</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="s1">'importance'</span><span class="p">:</span> <span class="n">rf_model_fs</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">})</span>
+<span class="n">importances_rf_fs</span> <span class="o">=</span> <span class="n">importances_rf_fs</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'importance'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'feature'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Feature Importances (Random Forest, Top </span><span class="si">{</span><span class="n">N_FEATURES_TO_SELECT</span><span class="si">}</span><span class="s2"> Feat.):"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">importances_rf_fs</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">N_FEATURES_TO_SELECT</span><span class="p">))</span> <span class="c1"># Mostra tutte le N feature usate</span>
+<span class="n">importances_rf_fs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'bar'</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span> <span class="c1"># Aggiornato per mostrare tutte le feature usate</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Feature Importances - Random Forest (Top </span><span class="si">{</span><span class="n">N_FEATURES_TO_SELECT</span><span class="si">}</span><span class="s1"> Feat.)'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -8706,45 +8711,38 @@ Il Random Forest Classifier mostra un miglioramento significativo rispetto alla 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [75]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Aggiungiamo XGBoost come terzo modello</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">xgboost</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xgb</span>
-
-<span class="c1"># Definiamo il modello XGBoost</span>
-<span class="c1"># Per dataset sbilanciati, scale_pos_weight è un parametro utile se NON si usa SMOTE.</span>
-<span class="c1"># Dato che usiamo X_train_smote (già bilanciato), non è strettamente necessario,</span>
-<span class="c1"># ma possiamo comunque usarlo o impostarlo a 1, oppure ometterlo.</span>
-<span class="c1"># Per coerenza con l'approccio Random Forest dove usiamo SMOTE, alleniamo XGBoost su X_train_smote.</span>
-<span class="n">xgb_model</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span>
-    <span class="n">objective</span><span class="o">=</span><span class="s1">'binary:logistic'</span><span class="p">,</span> <span class="c1"># Obiettivo per classificazione binaria</span>
-    <span class="n">eval_metric</span><span class="o">=</span><span class="s1">'aucpr'</span><span class="p">,</span>         <span class="c1"># Metrica di valutazione per l'early stopping (se usato)</span>
-    <span class="n">use_label_encoder</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>     <span class="c1"># Per evitare warning con versioni recenti</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># XGBoost non ottimizzato con Feature Selection</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"--- Addestramento XGBoost Classifier (non ottimizzato, con Feature Selection) ---"</span><span class="p">)</span>
+<span class="n">xgb_model_fs</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">XGBClassifier</span><span class="p">(</span>
+    <span class="n">objective</span><span class="o">=</span><span class="s1">'binary:logistic'</span><span class="p">,</span>
+    <span class="n">eval_metric</span><span class="o">=</span><span class="s1">'aucpr'</span><span class="p">,</span>
+    <span class="n">use_label_encoder</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
 <span class="p">)</span>
+<span class="n">xgb_model_fs</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_smote_fs</span><span class="p">,</span> <span class="n">y_train_smote</span><span class="p">)</span> <span class="c1"># Usa X_train_smote_fs</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">--- Addestramento XGBoost Classifier (con SMOTE) ---"</span><span class="p">)</span>
-<span class="n">xgb_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_smote</span><span class="p">,</span> <span class="n">y_train_smote</span><span class="p">)</span>
+<span class="n">y_pred_xgb_fs</span> <span class="o">=</span> <span class="n">xgb_model_fs</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_fs</span><span class="p">)</span> <span class="c1"># Usa X_test_fs</span>
+<span class="n">y_pred_proba_xgb_fs</span> <span class="o">=</span> <span class="n">xgb_model_fs</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test_fs</span><span class="p">)</span> <span class="c1"># Usa X_test_fs</span>
 
-<span class="n">y_pred_xgb</span> <span class="o">=</span> <span class="n">xgb_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="n">y_pred_proba_xgb</span> <span class="o">=</span> <span class="n">xgb_model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">results_xgb_fs</span> <span class="o">=</span> <span class="n">evaluate_model</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_xgb_fs</span><span class="p">,</span> <span class="n">y_pred_proba_xgb_fs</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"XGBoost Classifier (Top </span><span class="si">{</span><span class="n">N_FEATURES_TO_SELECT</span><span class="si">}</span><span class="s2"> Feat.)"</span><span class="p">)</span>
 
-<span class="n">results_xgb</span> <span class="o">=</span> <span class="n">evaluate_model</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_xgb</span><span class="p">,</span> <span class="n">y_pred_proba_xgb</span><span class="p">,</span> <span class="s2">"XGBoost Classifier (con SMOTE)"</span><span class="p">)</span>
-<span class="n">model_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">results_xgb</span><span class="p">)</span>
+<span class="n">model_results</span> <span class="o">=</span> <span class="p">[</span><span class="n">res</span> <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">model_results</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">res</span><span class="p">[</span><span class="s1">'model'</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"XGBoost Classifier (con SMOTE)"</span><span class="p">)]</span>
+<span class="n">model_results</span> <span class="o">=</span> <span class="p">[</span><span class="n">res</span> <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">model_results</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">res</span><span class="p">[</span><span class="s1">'model'</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"XGBoost Classifier (Top"</span><span class="p">)]</span>
+<span class="n">model_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">results_xgb_fs</span><span class="p">)</span>
 
-<span class="c1"># Analisi Feature Importances per XGBoost</span>
-<span class="n">importances_xgb</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-    <span class="s1">'feature'</span><span class="p">:</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>
-    <span class="s1">'importance'</span><span class="p">:</span> <span class="n">xgb_model</span><span class="o">.</span><span class="n">feature_importances_</span>
+<span class="c1"># Analisi Feature Importances (ora basata sulle feature selezionate)</span>
+<span class="n">importances_xgb_fs_model</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span> <span class="c1"># Rinominato per evitare conflitto con importances_xgb_fs della cella di selezione</span>
+    <span class="s1">'feature'</span><span class="p">:</span> <span class="n">X_train_smote_fs</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> 
+    <span class="s1">'importance'</span><span class="p">:</span> <span class="n">xgb_model_fs</span><span class="o">.</span><span class="n">feature_importances_</span>
 <span class="p">})</span>
-<span class="n">importances_xgb</span> <span class="o">=</span> <span class="n">importances_xgb</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'importance'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'feature'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Feature Importances (XGBoost Classifier):"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">importances_xgb</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="n">importances_xgb</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'bar'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Top 10 Feature Importances - XGBoost Classifier'</span><span class="p">)</span>
+<span class="n">importances_xgb_fs_model</span> <span class="o">=</span> <span class="n">importances_xgb_fs_model</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'importance'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'feature'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Feature Importances (XGBoost Classifier, Top </span><span class="si">{</span><span class="n">N_FEATURES_TO_SELECT</span><span class="si">}</span><span class="s2"> Feat.):"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">importances_xgb_fs_model</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">N_FEATURES_TO_SELECT</span><span class="p">))</span>
+<span class="n">importances_xgb_fs_model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'bar'</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Feature Importances - XGBoost Classifier (Top </span><span class="si">{</span><span class="n">N_FEATURES_TO_SELECT</span><span class="si">}</span><span class="s1"> Feat.)'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -8766,7 +8764,7 @@ Il Random Forest Classifier mostra un miglioramento significativo rispetto alla 
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/home/siralex/.cache/pypoetry/virtualenvs/credit-card-j7SKsNum-py3.13/lib/python3.13/site-packages/xgboost/training.py:183: UserWarning: [18:49:32] WARNING: /workspace/src/learner.cc:738: 
+<pre>/home/siralex/.cache/pypoetry/virtualenvs/credit-card-j7SKsNum-py3.13/lib/python3.13/site-packages/xgboost/training.py:183: UserWarning: [13:44:50] WARNING: /workspace/src/learner.cc:738: 
 Parameters: { "use_label_encoder" } are not used.
 
   bst.update(dtrain, iteration=i, fobj=obj)
@@ -8863,79 +8861,6 @@ L'XGBoost Classifier ottiene ottime performance, posizionandosi in modo competit
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c7ce4fe6">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [76]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># --- Inserisci questa nuova cella nel tuo notebook ---</span>
-
-<span class="c1"># Assumiamo che xgb_model sia già addestrato (dalla cella In [38])</span>
-<span class="c1"># e X_train contenga i nomi originali delle colonne prima di SMOTE (per l'ordinamento)</span>
-<span class="c1"># Le importances sono già state calcolate e stampate nella cella In [38]</span>
-<span class="c1"># Recuperiamole se necessario:</span>
-<span class="k">if</span> <span class="s1">'importances_xgb'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">()</span> <span class="ow">and</span> <span class="s1">'xgb_model'</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
-    <span class="n">importances_xgb</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-        <span class="s1">'feature'</span><span class="p">:</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="c1"># Assicurati che X_train abbia le colonne corrette</span>
-        <span class="s1">'importance'</span><span class="p">:</span> <span class="n">xgb_model</span><span class="o">.</span><span class="n">feature_importances_</span>
-    <span class="p">})</span>
-    <span class="n">importances_xgb</span> <span class="o">=</span> <span class="n">importances_xgb</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'importance'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">'feature'</span><span class="p">)</span>
-
-<span class="k">elif</span> <span class="s1">'importances_xgb'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">()</span> <span class="ow">and</span> <span class="s1">'xgb_model'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Errore: xgb_model non sembra essere stato addestrato. Esegui prima la cella di XGBoost."</span><span class="p">)</span>
-    <span class="c1"># Potresti voler fermare l'esecuzione o gestire l'errore qui</span>
-    <span class="k">raise</span> <span class="ne">NameError</span><span class="p">(</span><span class="s2">"xgb_model not defined"</span><span class="p">)</span>
-
-
-<span class="c1"># Scegliamo quante feature mantenere (puoi variare questo numero)</span>
-<span class="n">N_FEATURES_TO_SELECT</span> <span class="o">=</span> <span class="mi">8</span> <span class="c1"># Esempio: selezioniamo le top 15</span>
-
-<span class="n">selected_features</span> <span class="o">=</span> <span class="n">importances_xgb</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">N_FEATURES_TO_SELECT</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">--- Selezione Feature Basata su XGBoost Importance ---"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Selezionate le top </span><span class="si">{</span><span class="n">N_FEATURES_TO_SELECT</span><span class="si">}</span><span class="s2"> feature: </span><span class="si">{</span><span class="n">selected_features</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-
-<span class="c1"># Creare i nuovi dataset con solo le feature selezionate</span>
-<span class="c1"># È importante selezionare le feature da X_train_smote per l'addestramento</span>
-<span class="c1"># e da X_test per la valutazione, per mantenere la coerenza.</span>
-
-<span class="c1"># Verifica se le feature scalate ('scaled_amount', 'scaled_time') sono in X_train_smote.columns</span>
-<span class="c1"># Se hai eseguito il notebook come fornito, dovrebbero esserci.</span>
-<span class="c1"># X_train_smote è il dataset bilanciato che userai per RandomizedSearchCV</span>
-<span class="n">X_train_smote_fs</span> <span class="o">=</span> <span class="n">X_train_smote</span><span class="p">[</span><span class="n">selected_features</span><span class="p">]</span>
-<span class="n">X_test_fs</span> <span class="o">=</span> <span class="n">X_test</span><span class="p">[</span><span class="n">selected_features</span><span class="p">]</span> <span class="c1"># X_test è il set di test originale non ricampionato</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Nuova forma di X_train_smote_fs: </span><span class="si">{</span><span class="n">X_train_smote_fs</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Nuova forma di X_test_fs: </span><span class="si">{</span><span class="n">X_test_fs</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-
-<span class="c1"># Ora puoi usare X_train_smote_fs e y_train_smote per la RandomizedSearchCV</span>
-<span class="c1"># e X_test_fs e y_test per la valutazione finale del modello ottimizzato.</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>
---- Selezione Feature Basata su XGBoost Importance ---
-Selezionate le top 8 feature: ['V14', 'V4', 'V8', 'V10', 'V12', 'V13', 'scaled_amount', 'V7']
-
-Nuova forma di X_train_smote_fs: (454902, 8)
-Nuova forma di X_test_fs: (56962, 8)
-</pre>
-</div>
-</div>
-</div>
-</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=84a9f960">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8954,7 +8879,7 @@ Nuova forma di X_test_fs: (56962, 8)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [77]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># --- Modifiche alla cella In [39] ---</span>
@@ -9127,7 +9052,7 @@ La Confusion Matrix del modello ottimizzato mostra 12 falsi positivi e 20 falsi 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [80]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Creare un DataFrame con i risultati di tutti i modelli</span>
@@ -9178,56 +9103,77 @@ Random Forest Ottimizzato (RandomizedSearch, To...  0.967818  0.855438
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [83]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">joblib</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">RobustScaler</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span> <span class="c1"># Aggiunto per coerenza con il blocco di rifittaggio scaler</span>
 
-<span class="c1"># --- Assumiamo che queste siano le tue variabili finali ---</span>
-<span class="c1"># best_model = best_rf_model_tuned  # Il tuo modello migliore addestrato</span>
-<span class="c1"># X_train è il DataFrame originale usato per addestrare gli scaler, prima di SMOTE</span>
-<span class="c1"># Se hai usato un solo scaler per entrambe le colonne Amount e Time, adattati di conseguenza.</span>
+<span class="c1"># --- Assicurati che queste variabili siano definite correttamente dalla tua esecuzione precedente ---</span>
+<span class="c1"># Esempio:</span>
+<span class="c1"># best_rf_model_tuned_fs  -&gt; Il tuo modello RandomForest ottimizzato e addestrato su X_train_smote_fs</span>
+<span class="c1"># X_train_smote_fs        -&gt; Il DataFrame di training con le 15 feature selezionate (usato per addestrare best_rf_model_tuned_fs)</span>
+<span class="c1"># selected_features       -&gt; La lista dei nomi delle 15 feature selezionate:</span>
+<span class="c1">#                            ['V14', 'V4', 'V8', 'V10', 'V12', 'V13', 'scaled_amount', 'V7', </span>
+<span class="c1">#                             'V26', 'V15', 'V1', 'V18', 'V17', 'scaled_time', 'V27']</span>
 
-<span class="c1"># 1. Salva il modello</span>
+<span class="c1"># 1. Salva il modello finale (addestrato con le feature selezionate)</span>
 <span class="n">model_filename</span> <span class="o">=</span> <span class="s1">'fraud_detection_model.joblib'</span>
-<span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">best_rf_model_tuned_fs</span><span class="p">,</span> <span class="n">model_filename</span><span class="p">)</span> <span class="c1"># O il tuo modello XGBoost se è migliore</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Modello salvato in </span><span class="si">{</span><span class="n">model_filename</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">best_rf_model_tuned_fs</span><span class="p">,</span> <span class="n">model_filename</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Modello (addestrato su feature selezionate) salvato in: </span><span class="si">{</span><span class="n">model_filename</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
-<span class="c1"># 2. Salva gli Scaler</span>
-<span class="c1"># È FONDAMENTALE che questi scaler siano quelli fittati SUL TRAINING SET ORIGINALE (X_train, non X_train_smote)</span>
-<span class="c1"># Ricrea e fitta gli scaler solo sulle colonne 'Amount' e 'Time' del training set se non li hai già separati</span>
+<span class="c1"># 2. Salva gli Scaler (questi rimangono gli stessi, fittati su X_train originale per Amount e Time)</span>
+<span class="c1"># È FONDAMENTALE che questi scaler siano quelli fittati SUL TRAINING SET ORIGINALE </span>
+<span class="c1"># (PRIMA della selezione delle feature e prima di SMOTE, limitatamente alle colonne Time e Amount)</span>
 
-<span class="c1"># Esempio se avevi uno scaler unico e lo hai fittato due volte (non ideale, ma per recuperarlo):</span>
-<span class="c1"># Questo è solo un esempio, DEVI usare gli scaler fittati SUI DATI DI TRAINING come nel notebook</span>
-<span class="c1"># Se hai già 'rob_scaler' fittato, usalo. Altrimenti, rifittalo correttamente:</span>
+<span class="c1"># Se non hai salvato gli scaler originali (rob_scaler_amount, rob_scaler_time)</span>
+<span class="c1"># che sono stati fittati solo su X_train['Amount'] e X_train['Time'],</span>
+<span class="c1"># è meglio rifittarli qui per chiarezza e correttezza, usando i dati di training originali (non SMOTE, non FS).</span>
 
-<span class="c1"># Carica il dataset originale per rifittare gli scaler correttamente SUL TRAINING SET</span>
-<span class="c1"># (questo è solo per dimostrazione, tu dovresti avere gli scaler dal tuo flusso di preprocessing)</span>
-<span class="n">temp_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'../data/creditcard.csv'</span><span class="p">)</span>
-<span class="n">temp_X</span> <span class="o">=</span> <span class="n">temp_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">'Class'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">temp_y</span> <span class="o">=</span> <span class="n">temp_df</span><span class="p">[</span><span class="s1">'Class'</span><span class="p">]</span>
-<span class="n">temp_X_train</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">temp_X</span><span class="p">,</span> <span class="n">temp_y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">temp_y</span><span class="p">)</span>
+<span class="c1"># Carica il dataset originale per rifittare gli scaler correttamente SULLE COLONNE ORIGINALI DEL TRAINING SET</span>
+<span class="c1"># (Se hai già le variabili X_train e y_train originali definite prima di SMOTE e FS, usa quelle)</span>
+<span class="c1"># Altrimenti, ricarica per isolare questo passaggio:</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># Assumendo che il tuo notebook sia in 'CREDIT_CARD/notebooks/credit.ipynb'</span>
+    <span class="c1"># e i dati in 'CREDIT_CARD/data/creditcard.csv'</span>
+    <span class="n">original_df_for_scalers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'../data/creditcard.csv'</span><span class="p">)</span> 
+<span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+    <span class="c1"># Se il notebook è nella root 'CREDIT_CARD/' e i dati in 'CREDIT_CARD/data/'</span>
+    <span class="n">original_df_for_scalers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'data/creditcard.csv'</span><span class="p">)</span>
 
+<span class="n">original_X</span> <span class="o">=</span> <span class="n">original_df_for_scalers</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">'Class'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">original_y</span> <span class="o">=</span> <span class="n">original_df_for_scalers</span><span class="p">[</span><span class="s1">'Class'</span><span class="p">]</span>
+<span class="c1"># Usa le stesse impostazioni di random_state e stratify del tuo split originale</span>
+<span class="n">original_X_train</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">original_X</span><span class="p">,</span> <span class="n">original_y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">original_y</span><span class="p">)</span>
+
+<span class="c1"># Fitta e salva lo scaler per 'Amount'</span>
 <span class="n">scaler_amount</span> <span class="o">=</span> <span class="n">RobustScaler</span><span class="p">()</span>
-<span class="n">temp_X_train_amount_scaled</span> <span class="o">=</span> <span class="n">scaler_amount</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">temp_X_train</span><span class="p">[</span><span class="s1">'Amount'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">scaler_amount</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">original_X_train</span><span class="p">[</span><span class="s1">'Amount'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># Fitta su X_train originale</span>
 <span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">scaler_amount</span><span class="p">,</span> <span class="s1">'scaler_amount.joblib'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Scaler per Amount salvato in scaler_amount.joblib"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Scaler per Amount (fittato su X_train originale) salvato in: scaler_amount.joblib"</span><span class="p">)</span>
 
+<span class="c1"># Fitta e salva lo scaler per 'Time'</span>
 <span class="n">scaler_time</span> <span class="o">=</span> <span class="n">RobustScaler</span><span class="p">()</span>
-<span class="n">temp_X_train_time_scaled</span> <span class="o">=</span> <span class="n">scaler_time</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">temp_X_train</span><span class="p">[</span><span class="s1">'Time'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">scaler_time</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">original_X_train</span><span class="p">[</span><span class="s1">'Time'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># Fitta su X_train originale</span>
 <span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">scaler_time</span><span class="p">,</span> <span class="s1">'scaler_time.joblib'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Scaler per Time salvato in scaler_time.joblib"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Scaler per Time (fittato su X_train originale) salvato in: scaler_time.joblib"</span><span class="p">)</span>
 
-<span class="c1"># IMPORTANTE: Le features V1-V28 non richiedono scaling perché sono già output di PCA.</span>
-<span class="c1"># L'ordine delle features che il modello si aspetta è cruciale.</span>
-<span class="c1"># Dal tuo notebook: X_train.columns ti darà l'ordine corretto.</span>
-<span class="c1"># Assumiamo che sia: V1, V2, ..., V28, scaled_amount, scaled_time</span>
-<span class="c1"># Salva l'ordine delle colonne</span>
-<span class="n">expected_columns</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="c1"># X_train è quello usato per addestrare SMOTE, che ha scaled_amount e scaled_time</span>
-<span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">expected_columns</span><span class="p">,</span> <span class="s1">'expected_model_columns.joblib'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Ordine colonne atteso dal modello salvato in expected_model_columns.joblib: </span><span class="si">{</span><span class="n">expected_columns</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># 3. Salva l'ordine ESATTO delle feature selezionate che il modello si aspetta</span>
+<span class="c1"># Questa lista deve corrispondere alle colonne di X_train_smote_fs</span>
+<span class="n">actual_features_for_model</span> <span class="o">=</span> <span class="n">X_train_smote_fs</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span> 
+<span class="c1"># Oppure, se 'selected_features' è già la lista corretta dei nomi delle colonne </span>
+<span class="c1"># nell'ordine giusto (come ['V14', ..., 'scaled_amount', ..., 'scaled_time', ...]):</span>
+<span class="c1"># actual_features_for_model = selected_features</span>
+
+<span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">actual_features_for_model</span><span class="p">,</span> <span class="s1">'expected_model_columns.joblib'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Ordine colonne atteso dal modello (CON FEATURE SELECTION) salvato in: expected_model_columns.joblib"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Feature attese: </span><span class="si">{</span><span class="n">actual_features_for_model</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Assicurati di spostare questi file (fraud_detection_model.joblib, scaler_amount.joblib, </span>
+<span class="c1"># scaler_time.joblib, expected_model_columns.joblib) nella cartella `backend/saved_model/`</span>
 </pre></div>
 </div>
 </div>
@@ -9240,10 +9186,11 @@ Random Forest Ottimizzato (RandomizedSearch, To...  0.967818  0.855438
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Modello salvato in fraud_detection_model.joblib
-Scaler per Amount salvato in scaler_amount.joblib
-Scaler per Time salvato in scaler_time.joblib
-Ordine colonne atteso dal modello salvato in expected_model_columns.joblib: ['V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20', 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'scaled_amount', 'scaled_time']
+<pre>Modello (addestrato su feature selezionate) salvato in: fraud_detection_model.joblib
+Scaler per Amount (fittato su X_train originale) salvato in: scaler_amount.joblib
+Scaler per Time (fittato su X_train originale) salvato in: scaler_time.joblib
+Ordine colonne atteso dal modello (CON FEATURE SELECTION) salvato in: expected_model_columns.joblib
+Feature attese: ['V14', 'V4', 'V8', 'V10', 'V12', 'V13', 'scaled_amount', 'V7']
 </pre>
 </div>
 </div>
