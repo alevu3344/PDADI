@@ -30,9 +30,30 @@
   box-sizing: border-box; /* Importante per non far sforare input */
 }
 
-.v-features-label {
+
+.model-select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: white;
+  font-size: 1em;
+}
+
+.dynamic-fields-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Colonne responsive */
+  gap: 15px; /* Spazio tra i campi */
+  margin-bottom: 15px;
+}
+
+.v-features-label { /* Se lo usi ancora per un titolo sopra le V-features */
+    grid-column: 1 / -1; /* Fa sì che l'etichetta occupi tutta la larghezza della riga */
     margin-top: 20px;
     font-weight: bold;
+    text-align: left; /* o center */
 }
 
 .v-features-grid {
@@ -40,13 +61,6 @@
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Responsive grid */
     gap: 10px;
     margin-bottom: 15px;
-}
-
-.v-feature-group label {
-    font-size: 0.9em; /* Più piccolo per V features */
-}
-.v-feature-group input[type="number"] {
-    padding: 6px;
 }
 
 
