@@ -18,7 +18,7 @@ models_config = {} # To store loaded models, features, display names, and thresh
 try:
     scaler_amount = joblib.load(os.path.join(MODEL_DIR, 'scaler_amount.joblib'))
     scaler_time = joblib.load(os.path.join(MODEL_DIR, 'scaler_time.joblib'))
-    print("Scalers (Amount, Time) caricati con successo.")
+    print("Scaler (Amount, Time) caricati con successo.")
 except Exception as e:
     print(f"Errore FATALE nel caricamento degli scaler: {e}. Il preprocessing di Amount/Time fallirà.")
     scaler_amount = None
@@ -31,18 +31,16 @@ print("\n--- Caricamento Dinamico dei Modelli ---")
 if not os.path.isdir(MODEL_DIR):
     print(f"ERRORE: La directory dei modelli '{MODEL_DIR}' non esiste.")
 else:
-    # Find all model files (e.g., ending with _model.joblib)
     for model_file_path in glob.glob(os.path.join(MODEL_DIR, '*_model.joblib')):
         try:
             model_filename = os.path.basename(model_file_path)
-            # Extract model_base_name (e.g., "LR", "RF", "XGB_tuned", "LassoPoly_FS10")
             model_base_name = model_filename.replace('_model.joblib', '') 
             
-            # Construct paths for corresponding files
             features_filename = f"{model_base_name}_columns.joblib"
             features_file_path = os.path.join(MODEL_DIR, features_filename)
             
-            threshold_filename = f"{model_base_name}_thresh.json"
+            # UPDATED: Consistent threshold filename based on your convention
+            threshold_filename = f"{model_base_name}_thresh.json" 
             threshold_file_path = os.path.join(MODEL_DIR, threshold_filename)
 
             if not os.path.exists(features_file_path):
@@ -53,33 +51,26 @@ else:
             expected_features = joblib.load(features_file_path)
             
             optimal_threshold = 0.5 # Default threshold
-            display_name = model_base_name.replace('_', ' ').title() # Auto-generate display name
+            display_name = model_base_name.replace('_', ' ').title() 
 
             if os.path.exists(threshold_file_path):
                 try:
                     with open(threshold_file_path, 'r') as f:
                         threshold_data = json.load(f)
-                    # Expecting the JSON to directly contain the threshold or have a known key
-                    if isinstance(threshold_data, dict) and "optimal_threshold" in threshold_data:
-                        optimal_threshold = float(threshold_data["optimal_threshold"])
-                    elif isinstance(threshold_data, (float, int)): # If JSON file just contains the number
-                        optimal_threshold = float(threshold_data)
-                    else: # Try a common key if the above specific key from your example isn't found
-                        common_threshold_key = "optimal_threshold_f1_lasso_logreg_poly" # Example
-                        if isinstance(threshold_data, dict) and common_threshold_key in threshold_data:
-                             optimal_threshold = float(threshold_data[common_threshold_key])
-                        else:
-                            print(f"ATTENZIONE: Chiave soglia non standard o valore non numerico in '{threshold_filename}' per '{model_base_name}'. Uso default 0.5.")
-                    print(f"Soglia ottimale caricata per '{model_base_name}': {optimal_threshold:.4f}")
+                    # UPDATED: Simplified logic to expect a dictionary with a "thresh" key
+                    if isinstance(threshold_data, dict) and "thresh" in threshold_data:
+                        optimal_threshold = float(threshold_data["thresh"])
+                        print(f"Soglia ottimale caricata per '{model_base_name}' da {threshold_filename}: {optimal_threshold:.4f}")
+                    else:
+                        print(f"ATTENZIONE: Chiave 'thresh' non trovata o formato JSON non corretto in '{threshold_filename}' per '{model_base_name}'. Uso soglia default {optimal_threshold:.4f}.")
                 except Exception as e_thresh:
-                    print(f"Errore nel caricamento/parsing del file soglia '{threshold_filename}' per '{model_base_name}': {e_thresh}. Uso default 0.5.")
+                    print(f"Errore nel caricamento/parsing del file soglia '{threshold_filename}' per '{model_base_name}': {e_thresh}. Uso soglia default {optimal_threshold:.4f}.")
             else:
                 print(f"INFO: File soglia '{threshold_filename}' non trovato per '{model_base_name}'. Uso default 0.5.")
-
-            # Use model_base_name as the model_id
+            
             models_config[model_base_name] = {
                 "model": model_obj,
-                "expected_features": expected_features, # List of feature names this model/pipeline expects
+                "expected_features": expected_features,
                 "display_name": display_name,
                 "optimal_threshold": optimal_threshold
             }
@@ -90,17 +81,16 @@ else:
 
 if not models_config:
     print("ERRORE CRITICO: Nessun modello è stato caricato dinamicamente. L'API di predizione non funzionerà.")
-if not scaler_amount or not scaler_time: # Should have already printed if critical
+if not scaler_amount or not scaler_time:
     print("ERRORE CRITICO: Scaler non caricati. Il preprocessing di Amount/Time fallirà.")
 
-
-# --- API Endpoints (Largely the same, but rely on dynamically loaded models_config) ---
+# --- API Endpoints (rest of your API endpoints remain the same) ---
 
 @app.route('/models/list', methods=['GET'])
 def list_models():
     available_model_list = [
         {"id": model_id, "name": config["display_name"]}
-        for model_id, config in models_config.items() # models_config is now populated dynamically
+        for model_id, config in models_config.items()
     ]
     return jsonify(available_model_list)
 
@@ -125,7 +115,7 @@ def get_model_params():
         user_input_features.append({"name": "Amount", "type": "number", "label": "Importo Transazione"})
         temp_expected_features_for_user.discard('scaled_amount')
 
-    for feature_name in sorted(list(temp_expected_features_for_user)): # Sorted for consistent order
+    for feature_name in sorted(list(temp_expected_features_for_user)):
         user_input_features.append({"name": feature_name, "type": "number", "label": feature_name})
             
     return jsonify({
@@ -140,7 +130,7 @@ def predict():
     if not data:
         return jsonify({'error': 'Nessun dato JSON ricevuto.'}), 400
 
-    model_id = data.get('model_choice') # model_id will be the base name, e.g., "LR", "RF"
+    model_id = data.get('model_choice')
     if not model_id or model_id not in models_config:
         return jsonify({'error': f"Modello '{model_id}' non valido o non disponibile."}), 400
 
@@ -206,4 +196,4 @@ def predict():
 if __name__ == '__main__':
     if not models_config:
         print("AVVISO: Nessun modello è stato caricato. L'API potrebbe non funzionare come previsto.")
-    app.run(debug=True, port=5001) 
+    app.run(debug=True, port=5001)
