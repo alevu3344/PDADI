@@ -27,9 +27,8 @@
   padding: 8px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  box-sizing: border-box; /* Importante per non far sforare input */
+  box-sizing: border-box;
 }
-
 
 .model-select {
   width: 100%;
@@ -44,25 +43,24 @@
 
 .dynamic-fields-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Colonne responsive */
-  gap: 15px; /* Spazio tra i campi */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
   margin-bottom: 15px;
 }
 
-.v-features-label { /* Se lo usi ancora per un titolo sopra le V-features */
-    grid-column: 1 / -1; /* Fa sì che l'etichetta occupi tutta la larghezza della riga */
-    margin-top: 20px;
-    font-weight: bold;
-    text-align: left; /* o center */
+.v-features-label {
+  grid-column: 1 / -1;
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: left;
 }
 
 .v-features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Responsive grid */
-    gap: 10px;
-    margin-bottom: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+  margin-bottom: 15px;
 }
-
 
 button[type="submit"] {
   display: block;
@@ -103,18 +101,17 @@ button[type="submit"]:hover:not(:disabled) {
 }
 
 .prediction-result.error {
-  background-color: #f8d7da; /* Stesso colore delle frodi o un giallo/warning */
+  background-color: #f8d7da;
   color: #721c24;
   border: 1px solid #f5c6cb;
 }
-
 
 .prediction-result h3 {
   margin-top: 0;
 }
 
 .error-message {
-    color: red;
-    margin-bottom: 10px;
-    font-size: 0.9em;
+  color: red;
+  margin-bottom: 10px;
+  font-size: 0.9em;
 }

@@ -1,6 +1,5 @@
-
-import TransactionForm from './components/form/TransactionForm';
-import './App.css'; // Puoi mettere stili globali qui o rimuoverlo
+import TransactionForm from "./components/form/TransactionForm";
+import "./App.css";
 
 function App() {
   return (
@@ -12,7 +11,9 @@ function App() {
         <TransactionForm />
       </main>
       <footer>
-        <p>Progetto per il corso di Programmazione Applicazioni Data Intensive</p>
+        <p>
+          Progetto per il corso di Programmazione Applicazioni Data Intensive
+        </p>
       </footer>
     </div>
   );

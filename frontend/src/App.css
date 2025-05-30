@@ -1,7 +1,3 @@
-/* In App.css o index.css */
-
-
-
 body {
   font-family: sans-serif;
   display: flex;
@@ -18,7 +14,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh; /* Assicura che il footer sia sempre in fondo alla pagina */
+  min-height: 100vh;
   width: 100%;
 }
 
@@ -37,19 +33,19 @@ body {
 }
 
 .App-header h1 {
-    margin: 0;
+  margin: 0;
 }
 
 main {
-  padding: 0 10px; /* Un po' di padding laterale per schermi piccoli */
+  padding: 0 10px;
 }
 
 footer {
-    margin-top: 40px;
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-top: 1px solid #e7e7e7;
-    box-sizing: border-box;
-    font-size: 0.9em;
-    color: #6c757d;
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #e7e7e7;
+  box-sizing: border-box;
+  font-size: 0.9em;
+  color: #6c757d;
 }
