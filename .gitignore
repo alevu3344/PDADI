@@ -1,2 +1,5 @@
 notebooks/data/*.csv
 *.joblib
+.venv
+backend/saved_model/*
+credit.html

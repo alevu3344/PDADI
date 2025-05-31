@@ -1,15 +1,14 @@
+// frontend/src/services/predictionService.ts
 import axios from "axios";
 
+// Interfaccia per i dati grezzi del form (come l'avevamo definita per il form dinamico)
 export interface TransactionFormInputData {
-  Time: number;
-  Amount: number;
-  [key: string]: number | string;
+  [key: string]: number | string; // Permette alle feature V di essere stringhe (dall'input) o numeri
 }
 
+// Interfaccia per il payload inviato all'API
 export interface ApiPayload {
   model_choice: string;
-  Time: number;
-  Amount: number;
   [key: string]: string | number;
 }
 
@@ -18,7 +17,6 @@ export interface PredictionResponse {
   isFraud: boolean;
   fraudProbability: number;
   modelUsed?: string;
-  thresholdUsed?: number;
   error?: string;
 }
 
@@ -78,13 +76,10 @@ export const getFraudPrediction = async (
 ): Promise<PredictionResponse> => {
   const payloadToSend: ApiPayload = {
     model_choice: modelChoice,
-    Time: Number(formData.Time) || 0,
-    Amount: Number(formData.Amount) || 0,
   };
 
   for (const feature of requiredFeaturesForModel) {
-    if (feature.name !== "Time" && feature.name !== "Amount") {
-    }
+    payloadToSend[feature.name] = Number(formData[feature.name]) || 0;
   }
 
   try {

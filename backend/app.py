@@ -6,27 +6,23 @@ import numpy as np
 import pandas as pd
 import os
 import json
-import glob # For finding files
+import glob 
 
 app = Flask(__name__)
 CORS(app)
 
 MODEL_DIR = os.path.join(os.getcwd(), 'saved_model')
-models_config = {} # To store loaded models, features, display names, and thresholds
+models_config = {} 
 
-# --- Load Scalers (assuming these are common and their names are fixed) ---
+
 try:
     scaler_amount = joblib.load(os.path.join(MODEL_DIR, 'scaler_amount.joblib'))
-    scaler_time = joblib.load(os.path.join(MODEL_DIR, 'scaler_time.joblib'))
-    print("Scaler (Amount, Time) caricati con successo.")
+    print("Scaler (Amount) caricati con successo.")
 except Exception as e:
-    print(f"Errore FATALE nel caricamento degli scaler: {e}. Il preprocessing di Amount/Time fallirà.")
+    print(f"Errore FATALE nel caricamento degli scaler: {e}. Il preprocessing di Amount fallirà.")
     scaler_amount = None
-    scaler_time = None
-    # Potresti voler terminare l'app se gli scaler sono critici e non caricati.
-    # exit(1) 
+    exit(1) 
 
-# --- Dynamically Load Models ---
 print("\n--- Caricamento Dinamico dei Modelli ---")
 if not os.path.isdir(MODEL_DIR):
     print(f"ERRORE: La directory dei modelli '{MODEL_DIR}' non esiste.")
@@ -39,7 +35,7 @@ else:
             features_filename = f"{model_base_name}_columns.joblib"
             features_file_path = os.path.join(MODEL_DIR, features_filename)
             
-            # UPDATED: Consistent threshold filename based on your convention
+
             threshold_filename = f"{model_base_name}_thresh.json" 
             threshold_file_path = os.path.join(MODEL_DIR, threshold_filename)
 
@@ -57,7 +53,6 @@ else:
                 try:
                     with open(threshold_file_path, 'r') as f:
                         threshold_data = json.load(f)
-                    # UPDATED: Simplified logic to expect a dictionary with a "thresh" key
                     if isinstance(threshold_data, dict) and "thresh" in threshold_data:
                         optimal_threshold = float(threshold_data["thresh"])
                         print(f"Soglia ottimale caricata per '{model_base_name}' da {threshold_filename}: {optimal_threshold:.4f}")
@@ -81,10 +76,9 @@ else:
 
 if not models_config:
     print("ERRORE CRITICO: Nessun modello è stato caricato dinamicamente. L'API di predizione non funzionerà.")
-if not scaler_amount or not scaler_time:
-    print("ERRORE CRITICO: Scaler non caricati. Il preprocessing di Amount/Time fallirà.")
+if not scaler_amount:
+    print("ERRORE CRITICO: Scaler amount non disponibile. L'API di predizione non funzionerà correttamente.")
 
-# --- API Endpoints (rest of your API endpoints remain the same) ---
 
 @app.route('/models/list', methods=['GET'])
 def list_models():
@@ -103,14 +97,10 @@ def get_model_params():
     config = models_config[model_id]
     user_input_features = []
     
-    model_expects_scaled_time = 'scaled_time' in config["expected_features"]
     model_expects_scaled_amount = 'scaled_amount' in config["expected_features"]
     
     temp_expected_features_for_user = set(config["expected_features"])
     
-    if model_expects_scaled_time:
-        user_input_features.append({"name": "Time", "type": "number", "label": "Time (secondi tra transazioni)"})
-        temp_expected_features_for_user.discard('scaled_time')
     if model_expects_scaled_amount:
         user_input_features.append({"name": "Amount", "type": "number", "label": "Importo Transazione"})
         temp_expected_features_for_user.discard('scaled_amount')
@@ -138,9 +128,9 @@ def predict():
     model_obj = current_model_config["model"] 
     model_expected_original_features = current_model_config["expected_features"]
 
-    if not scaler_amount or not scaler_time:
-        return jsonify({'error': 'Scaler non disponibili sul server.'}), 500
-        
+    if not scaler_amount:
+        return jsonify({'error': 'Scaler amount non disponibile sul server.'}), 500
+
     print(f"Dati ricevuti per predizione con '{model_id}': {data}")
 
     input_df_dict = {}
@@ -148,14 +138,7 @@ def predict():
         user_provided_value = None
         original_feature_name_for_user = feature_name
 
-        if feature_name == 'scaled_time':
-            if 'Time' not in data: return jsonify({'error': "Feature 'Time' mancante."}), 400
-            original_feature_name_for_user = 'Time'
-            try:
-                raw_val = float(data[original_feature_name_for_user])
-                user_provided_value = scaler_time.transform(np.array([[raw_val]]))[0,0]
-            except (TypeError, ValueError): return jsonify({'error': f"Valore non valido per {original_feature_name_for_user}."}), 400
-        elif feature_name == 'scaled_amount':
+        if feature_name == 'scaled_amount':
             if 'Amount' not in data: return jsonify({'error': "Feature 'Amount' mancante."}), 400
             original_feature_name_for_user = 'Amount'
             try:
