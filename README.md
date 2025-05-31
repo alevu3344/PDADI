@@ -36,7 +36,7 @@ Questa applicazione si basa su modelli di Machine Learning pre-addestrati. Quest
         ```
     * Apri ed esegui tutte le celle del notebook `notebooks/credit.ipynb`. Questo processo salverà i file `.joblib` e `.json` necessari.
 2.  **Popola `backend/saved_model/`:**
-    * Assicurati che tutti gli artefatti generati dal notebook (es. `LR_model.joblib`, `LR_columns.joblib`, `LR_thresh.json`, `RF-OPT_model.joblib`, `RF-OPT_columns.joblib`, `XGB_model.joblib`, `XGB_columns.joblib`, `scaler_amount.joblib`, `scaler_time.joblib`) siano stati salvati o spostati nella directory `backend/saved_model/`.
+    * Assicurati che tutti gli artefatti generati dal notebook (tutti i file che iniziano _columns, _model e _thresh) siano stati salvati o spostati nella directory `backend/saved_model/`.
     * Il backend (`backend/app.py`) caricherà dinamicamente i modelli da questa directory basandosi sulla convenzione di denominazione:
         * Modello: `{NOME_BASE}_model.joblib`
         * Colonne: `{NOME_BASE}_columns.joblib`
@@ -65,7 +65,7 @@ Una volta che i container sono stati avviati con successo:
 * Per fermare i container in esecuzione in primo piano, premi `Ctrl+C` nel terminale.
 * Se i container sono in esecuzione in background (con l'opzione `-d`), o per pulire, esegui dalla directory principale del progetto:
     ```bash
-    docker-compose down
+    docker compose down
     ```
     Per rimuovere anche i volumi anonimi, aggiungi l'opzione `-v`: `docker compose down -v`.
 

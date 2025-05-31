@@ -36,9 +36,7 @@ const TransactionForm: React.FC = () => {
       const models = await getAvailableModels();
       setAvailableModelsList(models);
       if (models.length > 0) {
-        const defaultModel =
-          models.find((m) => m.id === "random_forest_tuned_pipeline") ||
-          models[0];
+        const defaultModel = models[0];
         setSelectedModelId(defaultModel.id);
       }
     };
@@ -164,10 +162,10 @@ const TransactionForm: React.FC = () => {
 
   return (
     <div className="transaction-form-container">
-      <h2>Seleziona Modello e Inserisci Dati Transazione</h2>
+      <h2>Seleziona un modello e inserisci i dati</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="modelChoice">Scegli il Modello:</label>
+          <label htmlFor="modelChoice">Scegli il modello:</label>
           <select
             id="modelChoice"
             value={selectedModelId}
@@ -185,11 +183,7 @@ const TransactionForm: React.FC = () => {
         </div>
 
         {currentModelParams.length > 0 && (
-          <div className="dynamic-fields-grid">
-            {" "}
-            {/* Usa una grid per i campi dinamici */}
-            {renderFormFields()}
-          </div>
+          <div className="dynamic-fields-grid"> {renderFormFields()}</div>
         )}
 
         {formError && <p className="error-message">{formError}</p>}
@@ -199,7 +193,7 @@ const TransactionForm: React.FC = () => {
             isLoading || !selectedModelId || currentModelParams.length === 0
           }
         >
-          {isLoading ? "Predizione in corso..." : "Ottieni Predizione"}
+          {isLoading ? "Predizione in corso..." : "Ottieni predizione"}
         </button>
       </form>
 
@@ -214,11 +208,11 @@ const TransactionForm: React.FC = () => {
           }`}
         >
           <h3>
-            Risultato Predizione (Modello:
+            Risultato predizione (Modello:
             {predictionResult.modelUsed ||
               availableModelsList.find((m) => m.id === selectedModelId)?.name ||
               selectedModelId}{" "}
-            {/* Fallback all'ID se il nome non si trova */})
+            )
           </h3>
           {predictionResult.error ? (
             <p>Errore: {predictionResult.error}</p>
@@ -228,7 +222,7 @@ const TransactionForm: React.FC = () => {
                 Esito: <strong>{predictionResult.prediction}</strong>
               </p>
               <p>
-                Probabilità di Frode:{" "}
+                Probabilità di frode:{" "}
                 <strong>
                   {(predictionResult.fraudProbability * 100).toFixed(2)}%
                 </strong>

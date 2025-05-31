@@ -12,9 +12,9 @@ app = Flask(__name__)
 CORS(app)
 
 MODEL_DIR = os.path.join(os.getcwd(), 'saved_model')
-models_config = {} # To store loaded models, features, display names, and thresholds
+models_config = {} 
 
-# --- Load Scalers (assuming these are common and their names are fixed) ---
+
 try:
     scaler_amount = joblib.load(os.path.join(MODEL_DIR, 'scaler_amount.joblib'))
     scaler_time = joblib.load(os.path.join(MODEL_DIR, 'scaler_time.joblib'))
@@ -23,10 +23,8 @@ except Exception as e:
     print(f"Errore FATALE nel caricamento degli scaler: {e}. Il preprocessing di Amount/Time fallirà.")
     scaler_amount = None
     scaler_time = None
-    # Potresti voler terminare l'app se gli scaler sono critici e non caricati.
-    # exit(1) 
+    exit(1) 
 
-# --- Dynamically Load Models ---
 print("\n--- Caricamento Dinamico dei Modelli ---")
 if not os.path.isdir(MODEL_DIR):
     print(f"ERRORE: La directory dei modelli '{MODEL_DIR}' non esiste.")
@@ -39,7 +37,7 @@ else:
             features_filename = f"{model_base_name}_columns.joblib"
             features_file_path = os.path.join(MODEL_DIR, features_filename)
             
-            # UPDATED: Consistent threshold filename based on your convention
+
             threshold_filename = f"{model_base_name}_thresh.json" 
             threshold_file_path = os.path.join(MODEL_DIR, threshold_filename)
 
@@ -84,7 +82,6 @@ if not models_config:
 if not scaler_amount or not scaler_time:
     print("ERRORE CRITICO: Scaler non caricati. Il preprocessing di Amount/Time fallirà.")
 
-# --- API Endpoints (rest of your API endpoints remain the same) ---
 
 @app.route('/models/list', methods=['GET'])
 def list_models():

@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Applicazione Rilevamento Frodi Carte di Credito</h1>
+        <h1>FraudHunter</h1>
       </header>
       <main>
         <TransactionForm />
