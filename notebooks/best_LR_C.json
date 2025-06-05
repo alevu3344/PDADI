@@ -1,3 +1,4 @@
 {
-    "classifier__C": 0.003727593720314938
+    "classifier__C": 0.001,
+    "feature_selection__k": 12
 }
