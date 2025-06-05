@@ -1,4 +1,3 @@
-// frontend/src/components/TransactionForm.tsx
 import React, { useState, useEffect, useCallback } from "react";
 import {
   getFraudPrediction,
@@ -32,14 +31,11 @@ const TransactionForm: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [formError, setFormError] = useState<string | null>(null);
 
-  // Carica la lista dei modelli al mount
   useEffect(() => {
     const fetchModels = async () => {
       const models = await getAvailableModels();
       setAvailableModelsList(models);
       if (models.length > 0) {
-        // Seleziona il primo modello della lista come default (o un default specifico)
-        // Potresti voler selezionare 'random_forest_tuned' se è sempre presente
         const defaultModel =
           models.find((m) => m.id === "random_forest_tuned_pipeline") ||
           models[0];
@@ -49,11 +45,10 @@ const TransactionForm: React.FC = () => {
     fetchModels();
   }, []);
 
-  // Carica i parametri del modello quando selectedModelId cambia
   const fetchParamsForModel = useCallback(async (modelId: string) => {
     if (!modelId) {
       setCurrentModelParams([]);
-      setFormData({ Time: 0, Amount: 0 }); // Resetta il form data
+      setFormData({ Time: 0, Amount: 0 });
       return;
     }
     setIsLoading(true);
@@ -66,18 +61,18 @@ const TransactionForm: React.FC = () => {
       setFormData({ Time: 0, Amount: 0 });
     } else {
       setCurrentModelParams(paramsResponse.required_features);
-      // Inizializza formData con le feature richieste dal nuovo modello
+
       const initialFormState: TransactionFormInputData = { Time: 0, Amount: 0 };
       paramsResponse.required_features.forEach((param) => {
         if (param.name !== "Time" && param.name !== "Amount") {
-          initialFormState[param.name] = 0.0; // Default a 0.0 per le feature V
+          initialFormState[param.name] = 0.0;
         }
       });
       setFormData(initialFormState);
-      setFormError(null); // Pulisce errori precedenti
+      setFormError(null);
     }
     setIsLoading(false);
-  }, []); // useCallback per stabilità
+  }, []);
 
   useEffect(() => {
     if (selectedModelId) {
@@ -89,14 +84,13 @@ const TransactionForm: React.FC = () => {
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
-    // Per i campi numerici, è meglio conservare come stringa nello stato per permettere input parziali
-    // La conversione a numero avverrà al momento del submit
+
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleModelChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedModelId(e.target.value);
-    setPredictionResult(null); // Resetta la predizione quando si cambia modello
+    setPredictionResult(null);
   };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -115,7 +109,7 @@ const TransactionForm: React.FC = () => {
     let isValid = true;
 
     for (const param of currentModelParams) {
-      const valueStr = String(formData[param.name] ?? "0.0"); // Usa '0.0' se undefined
+      const valueStr = String(formData[param.name] ?? "0.0");
       const numValue = parseFloat(valueStr);
       if (isNaN(numValue)) {
         isValid = false;
@@ -156,11 +150,11 @@ const TransactionForm: React.FC = () => {
       >
         <label htmlFor={param.name}>{param.label || param.name}:</label>
         <input
-          type="number" // Assumiamo tutti numerici per semplicità
+          type="number"
           step="any"
           id={param.name}
           name={param.name}
-          value={formData[param.name] ?? "0.0"} // Controlla per undefined e imposta default
+          value={formData[param.name] ?? "0.0"}
           onChange={handleInputChange}
           required
         />
@@ -191,11 +185,7 @@ const TransactionForm: React.FC = () => {
         </div>
 
         {currentModelParams.length > 0 && (
-          <div className="dynamic-fields-grid">
-            {" "}
-            {/* Usa una grid per i campi dinamici */}
-            {renderFormFields()}
-          </div>
+          <div className="dynamic-fields-grid"> {renderFormFields()}</div>
         )}
 
         {formError && <p className="error-message">{formError}</p>}
@@ -224,7 +214,7 @@ const TransactionForm: React.FC = () => {
             {predictionResult.modelUsed ||
               availableModelsList.find((m) => m.id === selectedModelId)?.name ||
               selectedModelId}{" "}
-            {/* Fallback all'ID se il nome non si trova */})
+            )
           </h3>
           {predictionResult.error ? (
             <p>Errore: {predictionResult.error}</p>

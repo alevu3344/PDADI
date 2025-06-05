@@ -1,12 +1,9 @@
-// frontend/src/services/predictionService.ts
 import axios from "axios";
 
-// Interfaccia per i dati grezzi del form (come l'avevamo definita per il form dinamico)
 export interface TransactionFormInputData {
-  [key: string]: number | string; // Permette alle feature V di essere stringhe (dall'input) o numeri
+  [key: string]: number | string;
 }
 
-// Interfaccia per il payload inviato all'API
 export interface ApiPayload {
   model_choice: string;
   [key: string]: string | number;
