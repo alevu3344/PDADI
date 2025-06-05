@@ -3,3 +3,4 @@ notebooks/data/*.csv
 .venv
 backend/saved_model/*
 credit.html
+doc.md
